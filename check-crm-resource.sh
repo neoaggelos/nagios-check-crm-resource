@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Author:       Aggelos Kolaitis
+# Description:  Nagios/Icinga to check if a crm resource is running
+# Usage:        check-crm-resource.sh my_resource_name
+# Requirements: Append the following on your sudoers file:
+#     Defaults:nagios !requiretty
+#     nagios  ALL=(ALL) NOPASSWD: /usr/sbin/crm_mon -f -r -1
+
 resource_name="$1"
 
 if [ "x${resource_name}" = "x" ]; then
